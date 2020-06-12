@@ -10,50 +10,69 @@
 // const player;
 // const name = document.getElementById('name');
 // const startButton = documnet.getElementById('start-button');
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 const result_div = document.querySelector(".result");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissor_div = document.getElementById("s");
-const header = document.getElementById("header")
-const playerChoice = 0;
-const computerChoice = 0;
+const playerDisplay = document.getElementById("playerDisplay")
+const computerDisplay = document.getElementById("computerDisplay")
+const winnerDisplay = document.getElementById("winnerDisplay")
 
+let playerChoice = 0;
+let computerChoice = 0;
 
-
-function game(userChoice) {
-  const computerChoice = getComputerChoice();
-  
-  console.log("user choice => " + userChoice);
-  console.log("computer choice => " + computerChoice);
-}
 
   rock_div.addEventListener('click', function() {
-    header.innerHTML = "You clicked rock";
-     playerChoice === r;
+    playerDisplay.innerHTML = "You clicked rock";
+     playerChoice = "rock";
     getComputerChoice()
+    console.log(playerChoice+computerChoice);
+    startGame()
 
   })
 
   paper_div.addEventListener('click', function() {
-    header.innerHTML = "You clicked paper";
-    // playerChoice === p;
+    playerDisplay.innerHTML = "You clicked paper";
+    playerChoice = "paper";
     getComputerChoice()
+    console.log(playerChoice+computerChoice);
+    startGame()
   })
 
   scissor_div.addEventListener('click', function() {
-    header.innerHTML = "You clicked scissor"
-    // playerChoice === s;
+    playerDisplay.innerHTML = "You clicked scissor"
+    playerChoice = "scissor";
     getComputerChoice()
+    console.log(playerChoice+computerChoice);
+    startGame()
   })
 
-  function getcomputerChoice() {
-    const choices = ['r', 'p', 's'];
-    const randomNumber = Math.floor(Math.random() *3);
-    const computerChoice = choices[randomNumber]
+  function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissor'];
+    randomNumber = Math.floor(Math.random() *3);
+    computerChoice = choices[randomNumber];
+    computerDisplay.innerHTML = "Computer choice: " + computerChoice;
+  }
+
+  function startGame() {
+    
+    if (computerChoice === playerChoice) {
+      winnerDisplay.innerHTML ="You Tied"
+      
+    } else if ( playerChoice + computerChoice === "scissorspaper" || "rockscissors" || "paperrock" ) {
+      winnerDisplay.innerHTML ="You are a winner!!!"
+    } 
+    else {
+      winnerDisplay.innerHTML = "You lost"
+      
+    }
     
   }
+
+
+
 
 // Fuctions
 
