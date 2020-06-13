@@ -6,16 +6,15 @@
   <title>Rock, Paper, Scissors</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+<div class=body>
 <body>
   <div id="top">
-    <h1 id="title" class="center">Rock Paper Scissors</h1>
+    <h1 id="title" class="header">Rock Paper Scissors</h1>
+    <h2 class = "second-header">Please choose one!</h2>
 
     
     
     <div id="start-game">
-      <!-- <label>Enter Your Name</label> -->
-      <!-- <input id="name" /> -->
-      <!-- <button id="start-button" class="hide">Start Game</button> -->
       <div class = buttons>
       <div class = rock>
         <img id='r' src="https://img.icons8.com/ios-glyphs/50/000000/hand-rock.png"/>
@@ -27,17 +26,22 @@
         <img id="s" src="https://img.icons8.com/ios-filled/50/000000/hand-scissors.png"/>
       </div>
     </div>
-    <h1 id="playerDisplay"></h1>
-    <h1 id="computerDisplay"></h1>
-    <h1 id="winnerDisplay"></h1>
+    <h3 id="playerDisplay"></h3>
+    <h3 id="computerDisplay"></h3>
+    <h3 id="winnerDisplay"></h3>
 
+    <div class ="scoreboard">
+      Games Played:<h4 id="gamePlayed"></h4> 
+      Games Won:<h4 id="userScore"></h4>
+      Tied Games:<h4 id="tiedScore"></h4>
+      Average:<h4 id="average"></h4>
+    </div>
     
-     </div>
-    <div id="game-area">
+    
     </div>
-    </div>
-    <!-- <p><span id="wins"></span> wins <span id="games"></span> played <span id="average"></span>average</p> -->
+    
   <script src="main.js"></script>
 </body>
+</div>
 </html>
 

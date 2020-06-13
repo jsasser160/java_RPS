@@ -7,11 +7,10 @@
 
 
 // Variables
-// const player;
-// const name = document.getElementById('name');
-// const startButton = documnet.getElementById('start-button');
 let userScore = 0;
 let computerScore = 0;
+let tiedScore = 0;
+let gamePlayed = 0;
 const result_div = document.querySelector(".result");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
@@ -19,7 +18,6 @@ const scissor_div = document.getElementById("s");
 const playerDisplay = document.getElementById("playerDisplay")
 const computerDisplay = document.getElementById("computerDisplay")
 const winnerDisplay = document.getElementById("winnerDisplay")
-
 let playerChoice = 0;
 let computerChoice = 0;
 
@@ -30,7 +28,7 @@ let computerChoice = 0;
     getComputerChoice()
     console.log(playerChoice+computerChoice);
     startGame()
-
+    displayCounts()
   })
 
   paper_div.addEventListener('click', function() {
@@ -39,6 +37,7 @@ let computerChoice = 0;
     getComputerChoice()
     console.log(playerChoice+computerChoice);
     startGame()
+    displayCounts()
   })
 
   scissor_div.addEventListener('click', function() {
@@ -47,6 +46,7 @@ let computerChoice = 0;
     getComputerChoice()
     console.log(playerChoice+computerChoice);
     startGame()
+    displayCounts()
   })
 
   function getComputerChoice() {
@@ -57,46 +57,40 @@ let computerChoice = 0;
   }
 
   function startGame() {
-    
     if (computerChoice === playerChoice) {
-      winnerDisplay.innerHTML ="You Tied"
-      
+      winnerDisplay.innerHTML ="You Tied";
+      tiedScore += 1
+      gamePlayed += 1
     } else if ( playerChoice+computerChoice === "scissorpaper" || 
                 playerChoice+computerChoice ===  "rockscissor" || 
                 playerChoice+computerChoice === "paperrock" ) {
-      winnerDisplay.innerHTML ="You are a winner!!!"
+      winnerDisplay.innerHTML ="You are a winner!!!";
+      userScore += 1
+      gamePlayed += 1
     } 
     else {
       winnerDisplay.innerHTML = "You lost"
-      
+      computerScore += 1
+      gamePlayed += 1
     }
-    
+  }
+
+  function displayCounts() {
+    document.getElementById("gamePlayed").innerHTML = gamePlayed;
+    document.getElementById("userScore").innerHTML=  userScore;
+    document.getElementById("tiedScore").innerHTML=  tiedScore;
+    document.getElementById("average").innerHTML=calcAverage();
+  }
+
+  function calcAverage() {
+    return (Math.floor((userScore/gamePlayed) * 100)+'%');
   }
 
 
 
 
-// Fuctions
-
-// function calcAverage() {
-  // return (Math.floor((wins/games)))
-// }
-
-function playgame(playerChoice, computerChoice) {
-
-  
-}
 
 
 
-// document.getElementById("taco").style.width = '300px'
-// // event listeners
-// document.getElementById('btn').addEventListener("click", changePic)
-// var taco = document.getElementById("taco")
-// function changePic() {
-//   if (taco.src === "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1314&q=80")
-//     taco.src = 'https://images.unsplash.com/photo-1508154048109-de555266b70a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80'
-//   else {
-//     taco.src = "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1314&q=80"
-//   }
-// }
+
+
