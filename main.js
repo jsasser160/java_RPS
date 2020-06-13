@@ -61,7 +61,9 @@ let computerChoice = 0;
     if (computerChoice === playerChoice) {
       winnerDisplay.innerHTML ="You Tied"
       
-    } else if ( playerChoice + computerChoice === "scissorspaper" || "rockscissors" || "paperrock" ) {
+    } else if ( playerChoice+computerChoice === "scissorpaper" || 
+                playerChoice+computerChoice ===  "rockscissor" || 
+                playerChoice+computerChoice === "paperrock" ) {
       winnerDisplay.innerHTML ="You are a winner!!!"
     } 
     else {
