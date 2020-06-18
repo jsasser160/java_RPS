@@ -64,7 +64,7 @@ let computerChoice = 0;
     } else if ( playerChoice+computerChoice === "scissorpaper" || 
                 playerChoice+computerChoice ===  "rockscissor" || 
                 playerChoice+computerChoice === "paperrock" ) {
-      winnerDisplay.innerHTML ="You are a winner!!!";
+      winnerDisplay.innerHTML ="<span style='color: green;'>You are a winner!!!</span>";
       userScore += 1
       gamePlayed += 1
     } 
