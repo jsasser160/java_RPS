@@ -69,7 +69,7 @@ let computerChoice = 0;
       gamePlayed += 1
     } 
     else {
-      winnerDisplay.innerHTML = "You lost"
+      winnerDisplay.innerHTML = "<span style= 'color:red;'> You LOST :( </span>"; 
       computerScore += 1
       gamePlayed += 1
     }
